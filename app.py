@@ -1,13 +1,7 @@
-from flask import Flask,jsonify,request
-import time
+from flask import Flask
 
-app=Flask(__name__)
-@app.route("/bot",method=["POST"])
+app = Flask(__name__)
 
-def respose():
-    query=dict(request.form)['query']
-    result=query+ " " + time.ctime()
-    return jsonify({"response" : result})
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>" 
